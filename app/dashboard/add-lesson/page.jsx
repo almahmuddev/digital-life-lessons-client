@@ -68,8 +68,7 @@ export default function AddLessonPage() {
 
   const labelClass = "block text-xs font-semibold text-gray-400 mb-1.5 uppercase tracking-wider";
   const inputClass = (field) =>
-    `w-full bg-gray-800 border ${
-      errors[field] ? "border-red-500" : "border-gray-700"
+    `w-full bg-gray-800 border ${errors[field] ? "border-red-500" : "border-gray-700"
     } rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-violet-500 transition-colors text-sm`;
 
   return (
@@ -246,4 +245,3 @@ export default function AddLessonPage() {
     </div>
   );
 }
-EOF
