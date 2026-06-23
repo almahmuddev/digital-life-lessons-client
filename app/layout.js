@@ -2,6 +2,7 @@
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 import GoogleProvider from "@/context/GoogleProvider";
+import ThemeProvider from "@/context/ThemeProvider";
 import { Toaster } from "react-hot-toast";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";

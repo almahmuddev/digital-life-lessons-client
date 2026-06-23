@@ -15,6 +15,8 @@ import {
   Star,
 } from "lucide-react";
 
+import ThemeToggle from "@/components/ui/ThemeToggle";
+
 export default function Navbar() {
   const { user, logout, isPremium } = useAuth();
   const pathname = usePathname();
@@ -44,10 +46,9 @@ export default function Navbar() {
   const isActive = (href) => pathname === href;
 
   const navLinkClass = (href) =>
-    `text-sm font-medium transition-colors duration-200 ${
-      isActive(href)
-        ? "text-violet-500"
-        : "text-gray-300 hover:text-violet-400"
+    `text-sm font-medium transition-colors duration-200 ${isActive(href)
+      ? "text-violet-500"
+      : "text-gray-300 hover:text-violet-400"
     }`;
 
   const publicNavLinks = [
@@ -118,8 +119,9 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* ── Right side: Premium badge + Avatar dropdown ── */}
+          {/* ── Right side: Theme toggle + Premium badge + Avatar dropdown ── */}
           <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
             {user && isPremium && (
               <span className="flex items-center gap-1 text-xs font-semibold text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2.5 py-1 rounded-full">
                 <Star size={12} fill="currentColor" />
