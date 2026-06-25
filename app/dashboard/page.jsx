@@ -60,7 +60,7 @@ export default function DashboardPage() {
 
   return (
     <div>
-      {/* Greeting */}
+      {/* Greeting message */}
       <div className="mb-8 flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-black text-white">
@@ -98,7 +98,7 @@ export default function DashboardPage() {
         </div>
       )}
 
-      {/* Stats */}
+      {/* stats */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
         {stats.map((s) => {
           const Icon = s.icon;

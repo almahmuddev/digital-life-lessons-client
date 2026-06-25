@@ -4,7 +4,7 @@ A full-stack web platform where users can create, store, and share meaningful li
 
 ## 🌐 Live URL
 
-- **Client:** https://digital-life-lessons-client.vercel.app
+- **Client:** https://digital-life-lessons-client-beta.vercel.app/
 - **Server:** https://digital-life-lessons-server.onrender.com
 
 ## 🎯 Purpose

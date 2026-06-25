@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -111,7 +112,7 @@ export default function AddLessonPage() {
           )}
         </div>
 
-        {/* Category + Tone — 2 columns */}
+        {/* Category + Tone — two columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className={labelClass}>Category *</label>
@@ -165,7 +166,7 @@ export default function AddLessonPage() {
           />
         </div>
 
-        {/* Visibility + Access Level — 2 columns */}
+        {/* Visibility + Access Level — two columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className={labelClass}>Visibility</label>
@@ -205,7 +206,7 @@ export default function AddLessonPage() {
           </div>
         </div>
 
-        {/* Premium upsell banner for free users */}
+        {/* Premium banner for free users */}
         {!isPremium && (
           <div className="flex items-center gap-3 bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
             <Crown size={20} className="text-amber-400 flex-shrink-0" />

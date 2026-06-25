@@ -86,8 +86,8 @@ export default function MyFavoritesPage() {
         <button
           onClick={() => setFiltersOpen(!filtersOpen)}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-medium transition-colors ${filtersOpen || hasActiveFilters
-              ? "bg-violet-600/20 border-violet-500/40 text-violet-300"
-              : "bg-gray-900 border-gray-800 text-gray-300 hover:border-gray-700"
+            ? "bg-violet-600/20 border-violet-500/40 text-violet-300"
+            : "bg-gray-900 border-gray-800 text-gray-300 hover:border-gray-700"
             }`}
         >
           <Filter size={14} />

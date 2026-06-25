@@ -40,7 +40,7 @@ export default function MyLessonsPage() {
     fetchLessons();
   }, []);
 
-  // ── Toggle visibility (Public / Private) ──────────────────────────────────
+  // Toggle visibility (Public / Private) 
   const handleToggleVisibility = async (lesson) => {
     setUpdatingId(lesson._id);
     try {
@@ -58,7 +58,7 @@ export default function MyLessonsPage() {
     }
   };
 
-  // ── Toggle access level (Free / Premium) — premium users only ─────────────
+  // Toggle access level (Free / Premium) — premium users
   const handleToggleAccessLevel = async (lesson) => {
     if (!isPremium) {
       toast.error("Upgrade to Premium to create paid lessons");
@@ -82,7 +82,7 @@ export default function MyLessonsPage() {
     }
   };
 
-  // ── Delete lesson ──────────────────────────────────────────────────────────
+  // Delete lesson 
   const handleDelete = async () => {
     if (!deleteTarget) return;
     setDeleting(true);
@@ -168,11 +168,10 @@ export default function MyLessonsPage() {
                       <button
                         onClick={() => handleToggleVisibility(lesson)}
                         disabled={updatingId === lesson._id}
-                        className={`flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full transition-colors disabled:opacity-50 ${
-                          lesson.visibility === "Public"
+                        className={`flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full transition-colors disabled:opacity-50 ${lesson.visibility === "Public"
                             ? "bg-green-500/15 text-green-300 hover:bg-green-500/25"
                             : "bg-gray-700/40 text-gray-400 hover:bg-gray-700/60"
-                        }`}
+                          }`}
                       >
                         {lesson.visibility === "Public" ? <Eye size={12} /> : <EyeOff size={12} />}
                         {lesson.visibility}
@@ -185,11 +184,10 @@ export default function MyLessonsPage() {
                         onClick={() => handleToggleAccessLevel(lesson)}
                         disabled={updatingId === lesson._id || !isPremium}
                         title={!isPremium ? "Upgrade to Premium to enable" : ""}
-                        className={`flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
-                          lesson.accessLevel === "Premium"
+                        className={`flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${lesson.accessLevel === "Premium"
                             ? "bg-amber-500/15 text-amber-300 hover:bg-amber-500/25"
                             : "bg-gray-700/40 text-gray-400 hover:bg-gray-700/60"
-                        }`}
+                          }`}
                       >
                         {lesson.accessLevel === "Premium" ? <Crown size={12} /> : <Lock size={12} className="opacity-0" />}
                         {lesson.accessLevel}

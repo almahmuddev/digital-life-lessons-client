@@ -67,11 +67,10 @@ function Sidebar() {
           <Link
             key={href}
             href={href}
-            className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-              isActive(href)
-                ? "bg-violet-600/20 text-violet-400"
-                : "text-gray-400 hover:bg-gray-800 hover:text-white"
-            }`}
+            className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${isActive(href)
+              ? "bg-violet-600/20 text-violet-400"
+              : "text-gray-400 hover:bg-gray-800 hover:text-white"
+              }`}
           >
             <Icon size={16} />
             {label}
@@ -91,11 +90,10 @@ function Sidebar() {
               <Link
                 key={href}
                 href={href}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-                  isActive(href)
-                    ? "bg-violet-600/20 text-violet-400"
-                    : "text-gray-400 hover:bg-gray-800 hover:text-white"
-                }`}
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${isActive(href)
+                  ? "bg-violet-600/20 text-violet-400"
+                  : "text-gray-400 hover:bg-gray-800 hover:text-white"
+                  }`}
               >
                 <Icon size={16} />
                 {label}

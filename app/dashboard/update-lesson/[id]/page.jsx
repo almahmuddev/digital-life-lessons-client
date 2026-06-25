@@ -31,7 +31,7 @@ export default function UpdateLessonPage() {
   const [errors, setErrors] = useState({});
   const [notOwner, setNotOwner] = useState(false);
 
-  // ── Load existing lesson ───────────────────────────────────────────────────
+  // Load existing lesson
   useEffect(() => {
     if (!id || !user) return;
 
@@ -40,7 +40,7 @@ export default function UpdateLessonPage() {
       .then((res) => {
         const l = res.data.lesson;
 
-        // guard: only the owner (or admin) can edit
+        // guard: only the owner or admin can edit
         if (l.creatorId !== user._id && user.role !== "admin") {
           setNotOwner(true);
           return;
@@ -96,8 +96,7 @@ export default function UpdateLessonPage() {
 
   const labelClass = "block text-xs font-semibold text-gray-400 mb-1.5 uppercase tracking-wider";
   const inputClass = (field) =>
-    `w-full bg-gray-800 border ${
-      errors[field] ? "border-red-500" : "border-gray-700"
+    `w-full bg-gray-800 border ${errors[field] ? "border-red-500" : "border-gray-700"
     } rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-violet-500 transition-colors text-sm`;
 
   if (loading) return <LoadingSpinner fullPage />;
@@ -217,7 +216,7 @@ export default function UpdateLessonPage() {
           )}
         </div>
 
-        {/* Visibility + Access Level */}
+        {/* visibility + access Level */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className={labelClass}>Visibility</label>

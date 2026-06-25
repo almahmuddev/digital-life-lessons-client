@@ -111,11 +111,10 @@ export default function ManageLessonsPage() {
         </div>
         <button
           onClick={() => setFiltersOpen(!filtersOpen)}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-medium transition-colors ${
-            filtersOpen || hasFilters
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-medium transition-colors ${filtersOpen || hasFilters
               ? "bg-violet-600/20 border-violet-500/40 text-violet-300"
               : "bg-gray-900 border-gray-800 text-gray-300 hover:border-gray-700"
-          }`}
+            }`}
         >
           <Filter size={14} />
           Filter
@@ -192,9 +191,8 @@ export default function ManageLessonsPage() {
                   </td>
                   <td className="px-5 py-4 text-gray-400 text-xs">{lesson.creatorName}</td>
                   <td className="px-5 py-4">
-                    <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${
-                      lesson.visibility === "Public" ? "bg-green-500/15 text-green-300" : "bg-gray-700/40 text-gray-400"
-                    }`}>
+                    <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${lesson.visibility === "Public" ? "bg-green-500/15 text-green-300" : "bg-gray-700/40 text-gray-400"
+                      }`}>
                       {lesson.visibility}
                     </span>
                   </td>
@@ -218,11 +216,10 @@ export default function ManageLessonsPage() {
                         onClick={() => handleToggleFeature(lesson)}
                         disabled={updatingId === lesson._id}
                         title={lesson.isFeatured ? "Remove from featured" : "Mark as featured"}
-                        className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors disabled:opacity-50 ${
-                          lesson.isFeatured
+                        className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors disabled:opacity-50 ${lesson.isFeatured
                             ? "bg-amber-500/20 text-amber-300"
                             : "bg-gray-800 hover:bg-amber-500/20 hover:text-amber-300 text-gray-400"
-                        }`}
+                          }`}
                       >
                         <Star size={14} fill={lesson.isFeatured ? "currentColor" : "none"} />
                       </button>

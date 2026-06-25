@@ -103,11 +103,10 @@ export default function ManageUsersPage() {
 
                   <td className="px-5 py-4">
                     <span
-                      className={`flex items-center gap-1.5 w-fit text-xs font-medium px-2.5 py-1 rounded-full ${
-                        u.role === "admin"
+                      className={`flex items-center gap-1.5 w-fit text-xs font-medium px-2.5 py-1 rounded-full ${u.role === "admin"
                           ? "bg-blue-500/15 text-blue-300"
                           : "bg-gray-700/40 text-gray-400"
-                      }`}
+                        }`}
                     >
                       {u.role === "admin" ? <ShieldCheck size={11} /> : <Shield size={11} />}
                       {u.role === "admin" ? "Admin" : "User"}
