@@ -66,7 +66,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
-          {/* ── Logo ── */}
+          {/* Logo initial will be replaced later for better project display---- */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 rounded-lg bg-violet-600 flex items-center justify-center group-hover:bg-violet-500 transition-colors">
               <BookOpen size={18} className="text-white" />
@@ -76,7 +76,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* ── Desktop Nav ── */}
+          {/* Desktop Nav bar ----- */}
           <div className="hidden md:flex items-center gap-6">
             {publicNavLinks.map((link) => (
               <Link key={link.href} href={link.href} className={navLinkClass(link.href)}>
@@ -119,7 +119,7 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* ── Right side: Theme toggle + Premium badge + Avatar dropdown ── */}
+          {/* Right side: Theme toggle + Premium badge + Avatar dropdown */}
           <div className="hidden md:flex items-center gap-3">
             <ThemeToggle />
             {user && isPremium && (
@@ -186,7 +186,7 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* ── Mobile menu button ── */}
+          {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden text-gray-400 hover:text-white transition-colors"
@@ -196,7 +196,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ── Mobile menu ── */}
+      {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-gray-900 border-t border-gray-800 px-4 py-4 flex flex-col gap-4">
           {publicNavLinks.map((link) => (

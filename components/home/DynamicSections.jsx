@@ -7,7 +7,7 @@ import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { useAuth } from "@/context/AuthContext";
 import { Trophy, Bookmark } from "lucide-react";
 
-// ─── Top Contributors ─────────────────────────────────────────────────────────
+// Top Contributors ----
 export function TopContributors() {
   const [contributors, setContributors] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -58,11 +58,10 @@ export function TopContributors() {
                     className="w-14 h-14 rounded-full object-cover border-2 border-gray-700"
                   />
                   {index < 3 && (
-                    <span className={`absolute -top-1 -right-1 w-5 h-5 rounded-full text-xs font-bold flex items-center justify-center ${
-                      index === 0 ? "bg-amber-500 text-gray-900"
-                      : index === 1 ? "bg-gray-400 text-gray-900"
-                      : "bg-amber-700 text-white"
-                    }`}>
+                    <span className={`absolute -top-1 -right-1 w-5 h-5 rounded-full text-xs font-bold flex items-center justify-center ${index === 0 ? "bg-amber-500 text-gray-900"
+                        : index === 1 ? "bg-gray-400 text-gray-900"
+                          : "bg-amber-700 text-white"
+                      }`}>
                       {index + 1}
                     </span>
                   )}
@@ -85,7 +84,7 @@ export function TopContributors() {
   );
 }
 
-// ─── Most Saved Lessons ───────────────────────────────────────────────────────
+// Most Saved Lessons ---
 export function MostSavedLessons() {
   const { isPremium } = useAuth();
   const [lessons, setLessons] = useState([]);

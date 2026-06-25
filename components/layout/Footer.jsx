@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BookOpen, Mail, Phone } from "lucide-react";
 
-// New X (Twitter) logo as SVG
+// New X logo as SVG
 const XLogo = () => (
   <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.632 5.905-5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 
-          {/* ── Brand ── */}
+          {/* Brand --- */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 rounded-lg bg-violet-600 flex items-center justify-center">
@@ -32,7 +32,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* ── Navigation ── */}
+          {/* Navigation --- */}
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm">Platform</h3>
             <ul className="flex flex-col gap-3 text-sm">
@@ -43,7 +43,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ── Legal ── */}
+          {/* Legal ---- */}
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm">Legal</h3>
             <ul className="flex flex-col gap-3 text-sm">
@@ -53,7 +53,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ── Contact & Social ── */}
+          {/* Contact & Social */}
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm">Contact</h3>
             <ul className="flex flex-col gap-3 text-sm">
@@ -71,7 +71,7 @@ export default function Footer() {
 
             {/* Social links */}
             <div className="flex items-center gap-3 mt-5">
-              {/* X (Twitter) */}
+              {/* Twitter */}
               <a
                 href="https://x.com"
                 target="_blank"
@@ -111,7 +111,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ── Bottom bar ── */}
+        {/* Bottom bar */}
         <div className="mt-10 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
           <p>© {currentYear} LifeLessons. All rights reserved.</p>
           <p className="text-gray-600">Built with Next.js & MongoDB</p>

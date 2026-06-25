@@ -101,7 +101,7 @@ export default function LessonCard({ lesson, isCurrentUserPremium = false }) {
           </span>
         </div>
 
-        {/* Stats + CTA */}
+        {/* Stats + cta */}
         <div className="flex items-center justify-between pt-3 border-t border-gray-800">
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1 text-xs text-gray-500">
