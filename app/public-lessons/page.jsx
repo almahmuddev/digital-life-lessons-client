@@ -127,11 +127,10 @@ export default function PublicLessonsPage() {
 
           <button
             onClick={() => setFiltersOpen(!filtersOpen)}
-            className={`flex items-center justify-center gap-2 px-5 py-3 rounded-xl border text-sm font-medium transition-colors ${
-              filtersOpen || hasActiveFilters
+            className={`flex items-center justify-center gap-2 px-5 py-3 rounded-xl border text-sm font-medium transition-colors ${filtersOpen || hasActiveFilters
                 ? "bg-violet-600/20 border-violet-500/40 text-violet-300"
                 : "bg-gray-900 border-gray-800 text-gray-300 hover:border-gray-700"
-            }`}
+              }`}
           >
             <SlidersHorizontal size={15} />
             Filters
@@ -268,11 +267,10 @@ export default function PublicLessonsPage() {
                     <button
                       key={p}
                       onClick={() => setPage(p)}
-                      className={`w-9 h-9 rounded-lg text-sm font-medium transition-colors ${
-                        p === page
+                      className={`w-9 h-9 rounded-lg text-sm font-medium transition-colors ${p === page
                           ? "bg-violet-600 text-white"
                           : "text-gray-400 hover:bg-gray-800"
-                      }`}
+                        }`}
                     >
                       {p}
                     </button>

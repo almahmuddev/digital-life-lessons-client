@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ── Dark mode (default) ── */
+/* Dark mode (default) --- */
 :root {
   --bg: #030712;
   --surface: #111827;
@@ -9,7 +9,7 @@
   --text-muted: #6b7280;
 }
 
-/* ── Light mode ── */
+/* Light mode ---- */
 .light {
   --bg: #f9fafb;
   --surface: #ffffff;

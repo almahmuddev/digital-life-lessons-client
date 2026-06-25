@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-gray-950 flex flex-col items-center justify-center px-4 text-center">
-      {/* Glowing number */}
+      {/* showing number */}
       <div className="relative mb-6">
         <p className="text-[10rem] font-black text-gray-800 leading-none select-none">
           404
