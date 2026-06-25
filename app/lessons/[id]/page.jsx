@@ -59,7 +59,7 @@ function LessonDetailsContent() {
   const [similarLessons, setSimilarLessons] = useState([]);
   const [reportOpen, setReportOpen] = useState(false);
 
-  // ── Fetch lesson + related data ──────────────────────────────────────────
+  // Fetch lesson + related data 
   useEffect(() => {
     if (!id) return;
 
@@ -97,7 +97,7 @@ function LessonDetailsContent() {
       .finally(() => setLoading(false));
   }, [id, user]);
 
-  // ── Like toggle ───────────────────────────────────────────────────────────
+  // Like toggle
   const handleLike = async () => {
     if (!user) {
       toast.error("Please log in to like");
@@ -121,7 +121,7 @@ function LessonDetailsContent() {
     }
   };
 
-  // ── Save to favorites toggle ────────────────────────────────────────────
+  // Save to favorites toggle 
   const handleSave = async () => {
     if (!user) {
       toast.error("Please log in to save lessons");
@@ -148,27 +148,27 @@ function LessonDetailsContent() {
     }
   };
 
-  // ── Share ────────────────────────────────────────────────────────────────
+  // Share
   const handleShare = async () => {
     const url = window.location.href;
     if (navigator.share) {
       try {
         await navigator.share({ title: lesson.title, url });
-      } catch {}
+      } catch { }
     } else {
       navigator.clipboard.writeText(url);
       toast.success("Link copied to clipboard");
     }
   };
 
-  // ── Reading time estimate ───────────────────────────────────────────────
+  // Reading time estimate
   const readingTime = lesson
     ? Math.max(1, Math.ceil(lesson.description.split(" ").length / 200))
     : 1;
 
   if (loading) return <LoadingSpinner fullPage />;
 
-  // ── Premium locked view ─────────────────────────────────────────────────
+  // Premium locked view 
   if (premiumLocked) {
     return (
       <div className="min-h-[70vh] flex items-center justify-center px-4">
@@ -215,7 +215,7 @@ function LessonDetailsContent() {
           Back to Public Lessons
         </Link>
 
-        {/* ── 1. Lesson Information ── */}
+        {/* Lesson Information */}
         <div className="mb-8">
           <div className="flex flex-wrap items-center gap-2 mb-4">
             <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${CATEGORY_COLORS[lesson.category]}`}>
@@ -248,7 +248,7 @@ function LessonDetailsContent() {
           </p>
         </div>
 
-        {/* ── 2. Lesson Metadata ── */}
+        {/* Lesson Metadata */}
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-gray-500 mb-8 pb-8 border-b border-gray-800">
           <span className="flex items-center gap-1.5">
             <Calendar size={13} /> Created {formattedCreated}
@@ -264,7 +264,7 @@ function LessonDetailsContent() {
           </span>
         </div>
 
-        {/* ── 3. Author Card ── */}
+        {/* Author Card*/}
         <div className="mb-8">
           <AuthorCard
             creatorId={lesson.creatorId}
@@ -274,7 +274,7 @@ function LessonDetailsContent() {
           />
         </div>
 
-        {/* ── 4. Stats & 5. Interaction Buttons ── */}
+        {/* Stats &  Interaction Buttons */}
         <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-8">
           <div className="flex items-center gap-6 mb-5 pb-5 border-b border-gray-800">
             <span className="flex items-center gap-2 text-sm text-gray-400">
@@ -294,11 +294,10 @@ function LessonDetailsContent() {
           <div className="flex flex-wrap gap-3">
             <button
               onClick={handleLike}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm transition-colors ${
-                liked
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm transition-colors ${liked
                   ? "bg-rose-500/20 text-rose-300 border border-rose-500/30"
                   : "bg-gray-800 text-gray-300 border border-gray-700 hover:border-rose-500/40"
-              }`}
+                }`}
             >
               <Heart size={16} fill={liked ? "currentColor" : "none"} />
               {liked ? "Liked" : "Like"}
@@ -306,11 +305,10 @@ function LessonDetailsContent() {
 
             <button
               onClick={handleSave}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm transition-colors ${
-                saved
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm transition-colors ${saved
                   ? "bg-violet-500/20 text-violet-300 border border-violet-500/30"
                   : "bg-gray-800 text-gray-300 border border-gray-700 hover:border-violet-500/40"
-              }`}
+                }`}
             >
               <Bookmark size={16} fill={saved ? "currentColor" : "none"} />
               {saved ? "Saved" : "Save to Favorites"}
@@ -336,7 +334,7 @@ function LessonDetailsContent() {
           </div>
         </div>
 
-        {/* ── 6. Comment Section ── */}
+        {/* Comment Section */}
         <div className="mb-10">
           <CommentSection
             lessonId={id}
@@ -345,7 +343,7 @@ function LessonDetailsContent() {
           />
         </div>
 
-        {/* ── 7. Similar & Recommended Lessons ── */}
+        {/* Similar & Recommended Lessons */}
         {similarLessons.length > 0 && (
           <div>
             <h2 className="text-lg font-bold text-white mb-5">
