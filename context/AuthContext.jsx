@@ -11,17 +11,17 @@ const API = process.env.NEXT_PUBLIC_API_URL;
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
-  const [loading, setLoading] = useState(true); // true on first mount — prevents flash
+  const [loading, setLoading] = useState(true); // true on first mount
 
-  // ── On mount: restore session from localStorage ──────────────────────────
-  // This is what prevents redirect to Login on page reload
+  // restore session from localStorage 
+  // prevents redirect to Login on page reload
   useEffect(() => {
     const storedToken = localStorage.getItem("dll_token");
     if (!storedToken) {
       setLoading(false);
       return;
     }
-    // verify token is still valid by calling /auth/me
+    // verify token is still valid with calling /auth/me
     axios
       .get(`${API}/auth/me`, {
         headers: { Authorization: `Bearer ${storedToken}` },
@@ -39,14 +39,14 @@ export function AuthProvider({ children }) {
       });
   }, []);
 
-  // ── Save token helper ─────────────────────────────────────────────────────
+  // Save token helper 
   const saveSession = (userData, userToken) => {
     localStorage.setItem("dll_token", userToken);
     setUser(userData);
     setToken(userToken);
   };
 
-  // ── Register ──────────────────────────────────────────────────────────────
+  // Register
   const register = async ({ name, email, password, photoURL }) => {
     const res = await axios.post(`${API}/auth/register`, {
       name,
@@ -58,14 +58,14 @@ export function AuthProvider({ children }) {
     return res.data;
   };
 
-  // ── Login ─────────────────────────────────────────────────────────────────
+  // Login
   const login = async ({ email, password }) => {
     const res = await axios.post(`${API}/auth/login`, { email, password });
     saveSession(res.data.user, res.data.token);
     return res.data;
   };
 
-  // ── Google login ──────────────────────────────────────────────────────────
+  // Google login
   // Call this after Google gives you the profile info
   const googleLogin = async ({ name, email, photoURL }) => {
     const res = await axios.post(`${API}/auth/google`, {
@@ -77,7 +77,7 @@ export function AuthProvider({ children }) {
     return res.data;
   };
 
-  // ── Logout ────────────────────────────────────────────────────────────────
+  // Logout -----
   const logout = () => {
     localStorage.removeItem("dll_token");
     setUser(null);
@@ -85,12 +85,12 @@ export function AuthProvider({ children }) {
     toast.success("Logged out successfully");
   };
 
-  // ── Update user locally (after profile update) ────────────────────────────
+  // Update user locally (after profile update) -----
   const updateUser = (updatedData) => {
     setUser((prev) => ({ ...prev, ...updatedData }));
   };
 
-  // ── Axios auth header helper ───────────────────────────────────────────────
+  // Axios auth header helper 
   const authHeader = () => ({
     headers: { Authorization: `Bearer ${token}` },
   });
